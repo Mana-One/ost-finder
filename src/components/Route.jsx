@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-export default Route = ({ path, children }) => {
-    const [ curerntPath, setCurrentPath ] = useState( window.location.pathname );
+const Route = ({ path, children }) => {
+    const [ currentPath, setCurrentPath ] = useState( window.location.pathname );
 
     useEffect(() => {
         const onLocationChange = () => setCurrentPath( window.location.pathname );
@@ -12,3 +12,5 @@ export default Route = ({ path, children }) => {
 
     return currentPath === path ? children : null;
 }
+
+export default Route;

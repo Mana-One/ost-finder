@@ -1,4 +1,6 @@
-export default Link = ({ className, href, children }) => {
+import React from "react";
+
+const Link = ({ className, href, children }) => {
     const onClick = event => {
         if( event.metaKey || event.ctrlKey ){
             return;
@@ -14,4 +16,6 @@ export default Link = ({ className, href, children }) => {
         {children}
     </a>
     );
-};
+}
+
+export default Link;
