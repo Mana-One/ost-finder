@@ -1,0 +1,1 @@
+export * as AnimeService from "./anime.js";
