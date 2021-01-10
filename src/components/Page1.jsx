@@ -68,11 +68,15 @@ const Page1 = () => {
 
     return(
         <div>
-            <h1>Anime List</h1>
-            <SearchBar setData={setAnimeTitle}/>
-            <AnimeList animes={animes} clickHandler={clickHandler}/>
-            <AnimeDetails animeId={animeId}/>
-            {showLoadButton()}
+            <div>
+                <h1>Anime List</h1>
+                <SearchBar setData={setAnimeTitle}/>
+                <AnimeList animes={animes} clickHandler={clickHandler}/>            
+                {showLoadButton()}
+            </div>
+            <div>
+                <AnimeDetails animeId={animeId}/>
+            </div>
         </div>
     );
 };

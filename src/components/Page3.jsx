@@ -66,10 +66,13 @@ const Page3 = () => {
 
     return(
         <div>
-            <h1>Anime List</h1>
-            <SearchBar setData={setAnimeTitle}/>
-            <AnimeList animes={animes} clickHandler={clickHandler}/>
-            {showLoadButton()}
+            <div>
+                <h1>Anime List</h1>
+                <SearchBar setData={setAnimeTitle}/>
+                <AnimeList animes={animes} clickHandler={clickHandler}/>
+                {showLoadButton()}
+            </div>
+            <div></div>
         </div>
     );
 };
