@@ -67,16 +67,14 @@ const Page1 = () => {
     }
 
     return(
-        <div>
-            <div>
+        <div className="flex-container">
+            <div className="flex-child">
                 <h1>Anime List</h1>
                 <SearchBar setData={setAnimeTitle}/>
                 <AnimeList animes={animes} clickHandler={clickHandler}/>            
                 {showLoadButton()}
             </div>
-            <div>
-                <AnimeDetails animeId={animeId}/>
-            </div>
+            <AnimeDetails animeId={animeId}/>
         </div>
     );
 };

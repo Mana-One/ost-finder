@@ -25,14 +25,14 @@ const AnimeDetails = ({ animeId }) => {
 
     if( !anime ){
         return(
-            <div>
+            <div className="right-flex-child">
                 <h3>No anime selected</h3>
             </div>
         );
     }
 
     return(
-        <div>
+        <div className="right-flex-child">
             <div>
                 <img src={anime.coverImage.large} alt="large-cover"/>
                 <div>
