@@ -56,6 +56,8 @@ const Page1 = () => {
            
     }, [ animeTitle ]);
 
+    const clickHandler = anime => setAnimeId( anime.id );
+
     const showLoadButton = () => {
         if( animeTitle !== "" && nextPage.page > 1 && nextPage.hasNextPage ){
             return( <button onClick={() => loadNextPage()}>Load more</button> );
@@ -68,7 +70,7 @@ const Page1 = () => {
         <div>
             <h1>Anime List</h1>
             <SearchBar setData={setAnimeTitle}/>
-            <AnimeList animes={animes} setData={setAnimeId}/>
+            <AnimeList animes={animes} clickHandler={clickHandler}/>
             <AnimeDetails animeId={animeId}/>
             {showLoadButton()}
         </div>
