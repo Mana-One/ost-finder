@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { AnimeService } from "../services";
 import SearchBar from "./SearchBar.jsx";
 import AnimeList from "./AnimeList.jsx";
+import AnimeDetails from "./AnimeDetails.jsx";
 
 const Page1 = () => {
     const [ animes, setAnimes ] = useState([]);
@@ -67,7 +68,8 @@ const Page1 = () => {
         <div>
             <h1>Anime List</h1>
             <SearchBar setData={setAnimeTitle}/>
-            <AnimeList animes={animes} setDate={setAnimeId}/>
+            <AnimeList animes={animes} setData={setAnimeId}/>
+            <AnimeDetails animeId={animeId}/>
             {showLoadButton()}
         </div>
     );

@@ -20,7 +20,6 @@ const searchQuery = `query( $id: Int, $page: Int, $perPage: Int, $search: String
 
 const detailsQuery = `query( $id: Int ){
     Media( id: $id ){
-        id
         title {
             userPreferred
             romaji

@@ -5,7 +5,7 @@ const AnimeList = ({ animes, setData }) => {
 
     return(
         <ul>
-            {animes.map( anime => <li key={anime.id} onClick={ event => setData( anime.id )}>
+            {animes.map( anime => <li key={anime.id} onClick={() => setData( anime.id )}>
                 {anime.title.userPreferred}
                 <img src={anime.coverImage.medium} alt="medium-cover"/>
             </li>)}
