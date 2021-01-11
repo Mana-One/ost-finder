@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { ShazamService } from "../services";
 import MusicSearchBar from "./MusicSearchBar.jsx";
+import Loader from "./Loader.jsx";
 
 const Page2 = () => {
     const [ musicTitle, setMusicTitle ] = useState("");
     const [ tracks, setTracks ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState( false );
 
     const clickHandler = async title => {
         try {
+            setIsLoading( true );
             if( title !== "" ){
                 const res = await ShazamService.fetchMusic( title );
                 setTracks( res.tracks.hits?.map( obj => obj.track ));
@@ -17,14 +20,17 @@ const Page2 = () => {
 
         } catch( err ){
             console.log( err.message );
+            
+        } finally {
+            setIsLoading( false );
         }
     }
 
     const showList = () => {
         if( tracks.length ){
-            console.log( tracks );
             return(
                 <div>
+                    <Loader isLoading={isLoading}/>
                     <ul>
                         {tracks.map( track => <li key={track.key}>Title: {track.title}</li> )}
                     </ul>
