@@ -6,7 +6,7 @@ const searchQuery = `query( $id: Int, $page: Int, $perPage: Int, $search: String
             total
             hasNextPage
         }
-        media( id: $id, search: $search, type: ANIME ){
+        media( id: $id, search: $search, type: ANIME, isAdult: false ){
             id
             title {
                 userPreferred
