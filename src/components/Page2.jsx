@@ -10,7 +10,7 @@ const Page2 = () => {
         try {
             if( title !== "" ){
                 const res = await ShazamService.fetchMusic( title );
-                setTracks( res.tracks.hits.map( obj => obj.track ));
+                setTracks( res.tracks.hits?.map( obj => obj.track ));
             } else {
                 setTracks([]);
             }
@@ -36,7 +36,7 @@ const Page2 = () => {
     }
 
     return(
-        <div className="">
+        <div className="flex-child">
             <h1>Find music</h1>
             <MusicSearchBar title={musicTitle} setMusicTitle={setMusicTitle} loadData={clickHandler}/>
             {showList()}

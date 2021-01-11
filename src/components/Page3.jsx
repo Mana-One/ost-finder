@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { AnimeService } from "../services";
 import SearchBar from "./SearchBar.jsx";
 import AnimeList from "./AnimeList.jsx";
+import OstList from "./OstList.jsx";
 
 const Page3 = () => {
     const [ animes, setAnimes ] = useState([]);
@@ -65,14 +66,14 @@ const Page3 = () => {
     }
 
     return(
-        <div>
-            <div>
+        <div className="flex-container">
+            <div className="flex-child">
                 <h1>Anime List</h1>
                 <SearchBar setData={setAnimeTitle}/>
                 <AnimeList animes={animes} clickHandler={clickHandler}/>
                 {showLoadButton()}
             </div>
-            <div></div>
+            <OstList musicTitle={animeOSTSearch}/>
         </div>
     );
 };
