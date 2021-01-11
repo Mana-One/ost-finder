@@ -1,3 +1,8 @@
+:root {
+  --header-height: 50px;
+  --footer-height: 100px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +10,8 @@
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -31,12 +36,21 @@ input {
 
 li {
   margin: 20px 0 0 0;
+  list-style: none;
 }
 
 button {
   min-width: 150px;
   min-height: 30px;
   margin-top: 40px;
+}
+
+p {
+  margin: 0 5%;
+}
+
+a {
+  text-decoration: none;
 }
 
 .app {
@@ -49,8 +63,6 @@ button {
 
 .flex-container {
   width: 100%;
-  height: 100%;
-  max-height: 90vh;
   margin: 0;
   display: flex;
   align-items: flex-start;
@@ -60,29 +72,25 @@ button {
 
 .flex-child {
   width: 50%;
-  height: 100%;
-  max-height: 90vh;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   padding: 0 20px 0 20px;
   overflow-y: auto;
+  padding: auto;
+  background-color: #9dd0d4;
 }
 
 .right-flex-child {
   width: 50%;
-  height: 90vh;
-  max-height: 90vh;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   padding: 0px 20px 0px 20px;
   margin: 30px 0 30px 0;
   align-self: center;
   overflow-y: auto;
 }
 
-.right-flex-child > div {
-  display: inline-block;
-}
-
 .header {
   width: 100%;
-  height: 50px;
+  height: var(--header-height);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -94,7 +102,25 @@ button {
   margin-left: 10px;
   margin-right: 10px;
   width: 200px;
-  color: red;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.header-link:hover {
+  background-color:#b2c1c2;
+}
+
+.footer {
+  width: 100%;
+  height: var(--footer-height);
+  text-align: center;
+  position: absolute;
+  padding: auto;
+  bottom: 0;
+  background-color: #000;
   color: #fff;
 }
 
@@ -102,4 +128,28 @@ button {
   width: 100%;
   height: 100%;
   padding: auto;
+}
+
+.anime-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.anime-header-col2 {
+  width: 40%;
+  margin: 0 5%;
+}
+
+.music-container {
+  width: 100%;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.music-container > * {
+  padding-left: auto;
+  padding-right: auto;
 }

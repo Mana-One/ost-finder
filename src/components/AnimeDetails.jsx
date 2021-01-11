@@ -33,9 +33,9 @@ const AnimeDetails = ({ animeId }) => {
 
     return(
         <div className="right-flex-child">
-            <div>
-                <img src={anime.coverImage.large} alt="large-cover"/>
-                <div>
+            <div className="anime-header">
+                <img src={anime.coverImage.large} alt="large-cover" className="anime-header-col2"/>
+                <div className="anime-header-col2">
                     <p>Title: {anime.title.userPreferred}</p>
                     <p>Alternative titles: {anime.title.romaji} | {anime.title.native}</p>
                     <p>Status: {anime.status}</p>

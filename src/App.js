@@ -5,6 +5,7 @@ import Home from "./components/Home.jsx";
 import Page1 from "./components/Page1.jsx";
 import Page2 from "./components/Page2.jsx";
 import Page3 from "./components/Page3.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
     return(
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/both">
                 <Page3/>
             </Route>
+            <Footer/>
         </div>
     )
 };
