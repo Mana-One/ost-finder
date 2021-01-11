@@ -7,7 +7,6 @@ const AnimeList = ({ animes, clickHandler }) => {
         <ul>
             {animes.map( anime => <li key={anime.id} onClick={() => clickHandler( anime )}>
                 {anime.title.userPreferred}
-                <img src={anime.coverImage.medium} alt="medium-cover"/>
             </li>)}
         </ul>
     );
