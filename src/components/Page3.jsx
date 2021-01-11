@@ -55,7 +55,10 @@ const Page3 = () => {
            
     }, [ animeTitle ]);
 
-    const clickHandler = anime => setAnimeOSTSearch( anime.title );
+    const clickHandler = anime => {
+        setAnimeOSTSearch( anime.title.userPreferred );
+        console.log( anime.title.userPreferred );
+    }
 
     const showLoadButton = () => {
         if( animeTitle !== "" && nextPage.page > 1 && nextPage.hasNextPage ){
@@ -68,7 +71,7 @@ const Page3 = () => {
     return(
         <div className="flex-container">
             <div className="flex-child">
-                <h1>Anime List</h1>
+                <h1>Find an anime to check out its soundtracks</h1>
                 <SearchBar setData={setAnimeTitle}/>
                 <AnimeList animes={animes} clickHandler={clickHandler}/>
                 {showLoadButton()}
