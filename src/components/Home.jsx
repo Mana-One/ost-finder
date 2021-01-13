@@ -2,9 +2,9 @@ import React from "react";
 
 const Home = () => {
     return(
-        <div className="home">
-            <h1>Welcome to this test app</h1>
-            <div className="flex-container">
+        <div className="main home">
+            <h1>Welcome to this test app: OST Finder !</h1>
+            <div className="home-content flex-container">
                 <div className="flex-child">
                     <h2>API 1: AniList</h2>
                     <p>An API that allows users to search for animes or mangas</p>

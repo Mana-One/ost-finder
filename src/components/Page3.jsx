@@ -69,14 +69,16 @@ const Page3 = () => {
     }
 
     return(
-        <div className="flex-container">
-            <div className="flex-child">
-                <h1>Find an anime to check out its soundtracks</h1>
-                <SearchBar setData={setAnimeTitle}/>
-                <AnimeList animes={animes} clickHandler={clickHandler}/>
-                {showLoadButton()}
+        <div className="main">
+            <div className="flex-container">
+                <div className="flex-child">
+                    <h1>Find an anime to check out its soundtracks</h1>
+                    <SearchBar setData={setAnimeTitle}/>
+                    <AnimeList animes={animes} clickHandler={clickHandler}/>
+                    {showLoadButton()}
+                </div>
+                <OstList musicTitle={animeOSTSearch}/>
             </div>
-            <OstList musicTitle={animeOSTSearch}/>
         </div>
     );
 };

@@ -42,10 +42,12 @@ const Page2 = () => {
     }
 
     return(
-        <div className="music-container">
-            <h1>Find music</h1>
-            <MusicSearchBar title={musicTitle} setMusicTitle={setMusicTitle} loadData={clickHandler}/>
-            {showList()}
+        <div className="main">
+            <div className="music-container">
+                <h1>Find music</h1>
+                <MusicSearchBar title={musicTitle} setMusicTitle={setMusicTitle} loadData={clickHandler}/>
+                {showList()}
+            </div>
         </div>
     );
 }

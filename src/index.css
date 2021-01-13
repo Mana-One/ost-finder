@@ -1,5 +1,5 @@
 :root {
-  --header-height: 50px;
+  --header-height: 80px;
   --footer-height: 100px;
 }
 
@@ -54,15 +54,58 @@ a {
 }
 
 .app {
-  width: 100%;
-  min-width: 100vw;
-  height: 100%;
-  min-height: 100vh;
-  margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
-.home > h1 {
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #000;
+}
+
+.header-link {
+  width: 200px;
+  height: 100%;
+  line-height: var(--header-height);
+  color: #fff;
+  text-align: center;
+}
+
+.header-link:hover {
+  background-color:#b2c1c2;
+}
+
+.footer {
+  width: 100%;
+  height: var(--footer-height);
+  text-align: center;
+  line-height: var(--footer-height);
+  font-size: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.main {
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.home > h1:first-child {
+  width: 100%;
+  height: 40%;
+  font-size: 50px;
   background-color: #9dd0d4;
+  padding-top: 20px;
+}
+
+.home-content {
+  flex: 1;
 }
 
 .flex-container {
@@ -76,7 +119,7 @@ a {
 
 .flex-child {
   width: 50%;
-  height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: 100%;
   padding: 0 20px 0 20px;
   overflow-y: auto;
   padding: auto;
@@ -93,7 +136,7 @@ a {
   background-color: white;
 }
 
-.header {
+/*.header {
   width: 100%;
   height: var(--header-height);
   display: flex;
@@ -101,33 +144,7 @@ a {
   justify-content: flex-start;
   background-color: #000;
   align-items: center;
-}
-
-.header-link {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 200px;
-  height: 100%;
-  color: #fff;
-  text-align: center;
-  padding-top: auto;
-  padding-bottom: auto;
-}
-
-.header-link:hover {
-  background-color:#b2c1c2;
-}
-
-.footer {
-  width: 100%;
-  height: var(--footer-height);
-  text-align: center;
-  position: absolute;
-  padding: auto;
-  bottom: 0;
-  background-color: #000;
-  color: #fff;
-}
+}*/
 
 .loader {
   width: 100%;
