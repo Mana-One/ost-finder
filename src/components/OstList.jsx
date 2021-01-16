@@ -9,7 +9,6 @@ const OstList = ({ musicTitle }) => {
 
     useEffect(() => {
         let currentLast = true;
-        console.log( isLoading );
         ( async () => {
             await setIsLoading( true );
             try { 
