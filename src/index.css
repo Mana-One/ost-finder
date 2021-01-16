@@ -248,7 +248,7 @@ a {
   cursor: pointer;
 }
 
-.anime-list > li {
+.anime-list > li:hover {
   transition-property: font-size, color; 
   transition-duration: .5s;
   color: white;
