@@ -55,10 +55,7 @@ const Page3 = () => {
            
     }, [ animeTitle ]);
 
-    const clickHandler = anime => {
-        setAnimeOSTSearch( anime.title.userPreferred );
-        console.log( anime.title.userPreferred );
-    }
+    const clickHandler = anime => setAnimeOSTSearch( anime.title.userPreferred );
 
     const showLoadButton = () => {
         if( animeTitle !== "" && nextPage.page > 1 && nextPage.hasNextPage ){
@@ -77,7 +74,10 @@ const Page3 = () => {
                     <AnimeList animes={animes} clickHandler={clickHandler}/>
                     {showLoadButton()}
                 </div>
-                <OstList musicTitle={animeOSTSearch}/>
+                <div className="right-flex-child">
+                    <h1>Epic OSTs</h1>
+                    <OstList musicTitle={animeOSTSearch}/>
+                </div>
             </div>
         </div>
     );

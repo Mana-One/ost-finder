@@ -24,7 +24,7 @@ code {
     monospace;
 }
 
-h1 {
+h1, h2, h3 {
   text-align: center;
 }
 
@@ -43,10 +43,6 @@ button {
   min-width: 150px;
   min-height: 30px;
   margin-top: 40px;
-}
-
-p {
-  margin: 0 5%;
 }
 
 a {
@@ -106,6 +102,10 @@ a {
 
 .home-content {
   flex: 1;
+}
+
+.home-content > .flex-child > p {
+  text-align: center;
 }
 
 .flex-container {

@@ -1,10 +1,6 @@
 import loader from "../img/loader.gif"
 
-const Loader = ({ isLoading }) => {
-    if( !isLoading ){
-        return null;
-    }
-
+const Loader = () => {
     return(
         <div className="loader">
             <img src={loader} alt="loader"/>
