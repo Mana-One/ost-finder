@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# OST FINDER APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a school project for the 3rd year React course at the ESGI.<br>
+The purpose of this application is to exploit 2 APIs:<br>
+-   [AniList API](https://anilist.gitbook.io/anilist-apiv2-docs)
+-   [Shazam](https://rapidapi.com/apidojo/api/shazam)
 
-## Available Scripts
+Also, CSS is definitely not my specialty, should my button styling, color scheme, etc. make your eyes bleed, I apologize in advance.
+<br><br>
 
-In the project directory, you can run:
+## Page 1
 
-### `npm start`
+This page uses the AniList API.<br>
+The left part is a search component that fetches anime with a matching title.<br>
+Each member in the list (if not empty) can be clicked, which will display the details of the corresponding anime.
+<br><br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Page 2
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This page exploits the Shazam API, beware as it requires a Rapid API key with a limited number of request.<br>
+It is a simple search component with a button to confirm the search criteria (it prevents the app from requesting the API too much by not making suggestions as the user writes in the input field).<br>
+A loader should appear as the Shazam API takes some time to fetch data.
+<br><br>
 
-### `npm test`
+## Page 3
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This page combines both APIs.<br>
+The left part of the page is the same component as in the first page.<br>
+However, clicking on an element will now display music titles with a matching name.<br>
+<br><br>
 
-### `npm run build`
+### NOTA BENE
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+As mentioned above the OST Finder actually matches an anime title with a song and may not actually fetch soundtracks used in said anime.<br>
+Here are some series that should return OSTs and/or Opening/Ending songs:
+<ul>
+    <li>Fate/Zero</li>
+    <li>Fate/Apocrypha</li>
+    <li>Naruto</li>
+</ul>
