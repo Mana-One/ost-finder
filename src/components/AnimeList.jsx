@@ -4,7 +4,7 @@ const AnimeList = ({ animes, clickHandler }) => {
     }
 
     return(
-        <ul>
+        <ul className="anime-list">
             {animes.map( anime => <li key={anime.id} onClick={() => clickHandler( anime )}>
                 {anime.title.userPreferred}
             </li>)}

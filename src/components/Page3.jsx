@@ -55,28 +55,30 @@ const Page3 = () => {
            
     }, [ animeTitle ]);
 
-    const clickHandler = anime => {
-        setAnimeOSTSearch( anime.title.userPreferred );
-        console.log( anime.title.userPreferred );
-    }
+    const clickHandler = anime => setAnimeOSTSearch( anime.title.userPreferred );
 
     const showLoadButton = () => {
         if( animeTitle !== "" && nextPage.page > 1 && nextPage.hasNextPage ){
-            return( <button onClick={() => loadNextPage()}>Load more</button> );
+            return( <button className="load-more-btn" onClick={() => loadNextPage()}>Load more</button> );
         } else {
             return null;
         }
     }
 
     return(
-        <div className="flex-container">
-            <div className="flex-child">
-                <h1>Find an anime to check out its soundtracks</h1>
-                <SearchBar setData={setAnimeTitle}/>
-                <AnimeList animes={animes} clickHandler={clickHandler}/>
-                {showLoadButton()}
+        <div className="main">
+            <div className="row1 cols-containers">
+                <div className="col2 left-col">
+                    <h1>Find an anime to check out its soundtracks</h1>
+                    <SearchBar setData={setAnimeTitle}/>
+                    <AnimeList animes={animes} clickHandler={clickHandler}/>
+                    {showLoadButton()}
+                </div>
+                <div className="col2 rows-container">
+                    <h1>Epic OSTs</h1>
+                    <OstList musicTitle={animeOSTSearch}/>
+                </div>
             </div>
-            <OstList musicTitle={animeOSTSearch}/>
         </div>
     );
 };

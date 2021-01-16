@@ -60,21 +60,23 @@ const Page1 = () => {
 
     const showLoadButton = () => {
         if( animeTitle !== "" && nextPage.page > 1 && nextPage.hasNextPage ){
-            return( <button onClick={() => loadNextPage()}>Load more</button> );
+            return( <button className="load-more-btn" onClick={() => loadNextPage()}>Load more</button> );
         } else {
             return null;
         }
     }
 
     return(
-        <div className="flex-container">
-            <div className="flex-child">
-                <h1>Anime List</h1>
-                <SearchBar setData={setAnimeTitle}/>
-                <AnimeList animes={animes} clickHandler={clickHandler}/>            
-                {showLoadButton()}
+        <div className="main">
+            <div className="row1 cols-containers">
+                <div className="col2 left-col">
+                    <h1>Anime List</h1>
+                    <SearchBar setData={setAnimeTitle}/>
+                    <AnimeList animes={animes} clickHandler={clickHandler}/>            
+                    {showLoadButton()}
+                </div>
+                <AnimeDetails animeId={animeId}/>
             </div>
-            <AnimeDetails animeId={animeId}/>
         </div>
     );
 };

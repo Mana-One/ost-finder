@@ -2,49 +2,49 @@ import { useState, useEffect } from "react";
 import { ShazamService } from "../services";
 import Loader from "./Loader.jsx";
 
+
 const OstList = ({ musicTitle }) => {
     const [ tracks, setTracks ] = useState([]);
     const [ isLoading, setIsLoading ] = useState( false );
 
     useEffect(() => {
         let currentLast = true;
-        const loadData = async () => {
-            try {
-                setIsLoading( true );
+        console.log( isLoading );
+        ( async () => {
+            await setIsLoading( true );
+            try { 
                 if( musicTitle !== "" ){
                     const res = await ShazamService.fetchMusic( musicTitle );
-                    currentLast && setTracks( res.tracks.hits.map( obj => obj.track ));
-                } else {
-                    currentLast && setTracks([]);
-                }    
+                    currentLast && setTracks( res.tracks === undefined ? 
+                        [] :
+                        res.tracks.hits.map( obj => obj.track )
+                    );
+                }
     
             } catch( err ){
                 console.log( err.message );
             } finally {
-                setIsLoading( false );
+                await setIsLoading( false );
             }
-        }
-        loadData();
+        })();            
 
         return () => currentLast = false;
 
     }, [ musicTitle ]);
 
-    if( musicTitle === "" ){
-        return(
-            <div className="right-flex-child">
-                <h3>No anime selected</h3>
-            </div>
-        );
+
+    if( isLoading === true ){
+        return( <Loader/> );
     }
 
     return(
-        <div className="right-flex-child">
-            <h1>Epic OSTs</h1>
-            <Loader isLoading={isLoading}/>
-            <ul>
-                {tracks.map( track => <li key={track.key}>Title: {track.title}</li> )}
-            </ul>
+        <div className="cols-containers col1">
+            { tracks.length === 0 ? 
+                <h3>No tracks found !</h3> : 
+                <ul>
+                    {tracks.map( track => <li key={track.key}>Title: {track.title}</li> )}
+                </ul>
+            }            
         </div>
     );
 }

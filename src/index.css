@@ -1,12 +1,18 @@
+:root {
+  --header-height: 80px;
+  --footer-height: 100px;
+}
+
 * {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-size: 20px;
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -19,87 +25,242 @@ code {
     monospace;
 }
 
-h1 {
+h1, h2, h3 {
   text-align: center;
 }
 
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
 input {
-  width: 200px;
-  margin: 0;
-  padding: 0;
+  min-width: 500px;
+  height: 30px;
+}
+
+ul {
+  margin-bottom: 30px;
 }
 
 li {
   margin: 20px 0 0 0;
+  list-style: none;
+  cursor: pointer;
 }
 
 button {
   min-width: 150px;
   min-height: 30px;
-  margin-top: 40px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
 
 .app {
-  width: 100%;
-  min-width: 100vw;
-  height: 100%;
-  min-height: 100vh;
-  margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
-.flex-container {
-  width: 100%;
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #000;
+}
+
+.header-link {
+  width: 200px;
   height: 100%;
-  max-height: 90vh;
+  line-height: var(--header-height);
+  color: #fff;
+  text-align: center;
+}
+
+.header-link:hover {
+  background-color:#b2c1c2;
+}
+
+.footer {
+  width: 100%;
+  height: var(--footer-height);
+  text-align: center;
+  line-height: var(--footer-height);
+  font-size: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.main {
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.home {
+  background-color: #9dd0d4;
+}
+
+.home > h1:first-child {
+  width: 100%;
+  height: 40%;
+  font-size: 50px;
+  padding-top: 20px;
+}
+
+.row1 {
+  flex: 1;
+  width: 100%;
+}
+
+.cols-containers {
+  width: 100%;
   margin: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;  
   flex-direction: row;
 }
 
-.flex-child {
-  width: 50%;
+.row-container {
   height: 100%;
-  max-height: 90vh;
-  padding: 0 20px 0 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.col1 {
+  width: 100%;
+  height: 100%;
   overflow-y: auto;
 }
 
-.right-flex-child {
+.col2 {
   width: 50%;
-  height: 90vh;
-  max-height: 90vh;
+  height: 100%;
+}
+
+.left-col {
+  background-color: #9dd0d4;
+  overflow-y: auto;
+  padding: 0 20px;
+}
+
+.home-div > p {
+  text-align: center;
+}
+
+/*.right-flex-child {
+  width: 50%;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   padding: 0px 20px 0px 20px;
   margin: 30px 0 30px 0;
   align-self: center;
   overflow-y: auto;
-}
+  background-color: white;
+}*/
 
-.right-flex-child > div {
-  display: inline-block;
-}
-
-.header {
+/*.header {
   width: 100%;
-  height: 50px;
+  height: var(--header-height);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   background-color: #000;
   align-items: center;
-}
-
-.header-link {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 200px;
-  color: red;
-  color: #fff;
-}
+}*/
 
 .loader {
   width: 100%;
   height: 100%;
-  padding: auto;
+}
+
+.anime-search {
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.page2 > h1 {
+  width: 100%;
+  height: 60px;
+}
+
+.music-search {
+  /*width: 100%;*/
+  height: 60px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.music-search > input {
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  margin-right: 30px;
+}
+
+.music-search > button {
+  flex: 1;
+}
+
+.anime-container{
+  overflow-y: auto;
+}
+
+.anime-header {
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.anime-header > img {
+  max-width: 50%;
+  display: block;
+}
+
+.anime-header > div > h3, .anime-header > div > p {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.anime-body {
+  width: 90%;
+  margin:auto;
+  margin-bottom: 30px;
+}
+
+.music-container > div:first-child > * {
+  display: inline-block;
+  margin: auto;
+}
+
+.load-more-btn {
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.anime-list {
+  margin-left: 50px;
 }
