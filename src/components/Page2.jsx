@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { ShazamService } from "../services";
 import MusicSearchBar from "./MusicSearchBar.jsx";
 import OstList from "./OstList.jsx";
-import Loader from "./Loader.jsx";
 
 const Page2 = () => {
     const [ musicTitle, setMusicTitle ] = useState("");
