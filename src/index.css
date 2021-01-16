@@ -53,7 +53,6 @@ ul {
 li {
   margin: 20px 0 0 0;
   list-style: none;
-  cursor: pointer;
 }
 
 button {
@@ -168,26 +167,6 @@ a {
   text-align: center;
 }
 
-/*.right-flex-child {
-  width: 50%;
-  height: calc(100vh - var(--header-height) - var(--footer-height));
-  padding: 0px 20px 0px 20px;
-  margin: 30px 0 30px 0;
-  align-self: center;
-  overflow-y: auto;
-  background-color: white;
-}*/
-
-/*.header {
-  width: 100%;
-  height: var(--header-height);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  background-color: #000;
-  align-items: center;
-}*/
-
 .loader {
   width: 100%;
   height: 100%;
@@ -201,7 +180,7 @@ a {
 
 .page2 > h1 {
   width: 100%;
-  height: 60px;
+  height: 80px;
 }
 
 .music-search {
@@ -263,4 +242,28 @@ a {
 
 .anime-list {
   margin-left: 50px;
+}
+
+.anime-list > li {
+  cursor: pointer;
+}
+
+.anime-list > li:hover {
+  transition-property: font-size, color; 
+  transition-duration: .5s;
+  color: white;
+}
+
+.track-list > li > a {
+  cursor: pointer;
+}
+
+.track-list > li > a, .track-list > li > a:visited {
+  color: black;
+}
+
+.track-list > li > a:hover {
+  transition-property: font-size, color; 
+  transition-duration: .5s;
+  color: #4e89cc;
 }

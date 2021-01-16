@@ -3,13 +3,17 @@ import { ShazamService } from "../services";
 import Loader from "./Loader.jsx";
 
 
+const clickHandler = url => {
+    const tab = window.open( url, "_blank" );
+    tab.focus();
+}
+
 const OstList = ({ musicTitle }) => {
     const [ tracks, setTracks ] = useState([]);
     const [ isLoading, setIsLoading ] = useState( false );
 
     useEffect(() => {
         let currentLast = true;
-        console.log( isLoading );
         ( async () => {
             await setIsLoading( true );
             try { 
@@ -41,8 +45,12 @@ const OstList = ({ musicTitle }) => {
         <div className="cols-containers col1">
             { tracks.length === 0 ? 
                 <h3>No tracks found !</h3> : 
-                <ul>
-                    {tracks.map( track => <li key={track.key}>Title: {track.title}</li> )}
+                <ul className="track-list">
+                    {tracks.map( track => <li key={track.key}>
+                        Title: <a href="#" onClick={ event => clickHandler( track.url )}>
+                            {track.title}
+                        </a> by {track.subtitle}
+                    </li> )}
                 </ul>
             }            
         </div>
