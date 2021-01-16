@@ -59,7 +59,7 @@ const Page3 = () => {
 
     const showLoadButton = () => {
         if( animeTitle !== "" && nextPage.page > 1 && nextPage.hasNextPage ){
-            return( <button onClick={() => loadNextPage()}>Load more</button> );
+            return( <button className="load-more-btn" onClick={() => loadNextPage()}>Load more</button> );
         } else {
             return null;
         }
@@ -67,14 +67,14 @@ const Page3 = () => {
 
     return(
         <div className="main">
-            <div className="flex-container">
-                <div className="flex-child">
+            <div className="row1 cols-containers">
+                <div className="col2 left-col">
                     <h1>Find an anime to check out its soundtracks</h1>
                     <SearchBar setData={setAnimeTitle}/>
                     <AnimeList animes={animes} clickHandler={clickHandler}/>
                     {showLoadButton()}
                 </div>
-                <div className="right-flex-child">
+                <div className="col2 rows-container">
                     <h1>Epic OSTs</h1>
                     <OstList musicTitle={animeOSTSearch}/>
                 </div>

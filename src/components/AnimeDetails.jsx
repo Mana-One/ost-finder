@@ -25,23 +25,25 @@ const AnimeDetails = ({ animeId }) => {
 
     if( !anime ){
         return(
-            <div className="right-flex-child">
-                <h3>No anime selected</h3>
+            <div className="col2 cols-containers">
+                <div className="cols-container">
+                    <h3>No anime selected</h3>
+                </div>
             </div>
         );
     }
 
     return(
-        <div className="right-flex-child">
-            <div className="anime-header">
-                <img src={anime.coverImage.large} alt="large-cover" className="anime-header-col2"/>
-                <div className="anime-header-col2">
-                    <p>Title: {anime.title.userPreferred}</p>
+        <div className="col2 rows-container anime-container">
+            <div className="anime-header cols-containers">
+                <img src={anime.coverImage.large} alt="large-cover" className="col2"/>
+                <div className="col2">
+                    <h3>{anime.title.userPreferred}</h3>
                     <p>Alternative titles: {anime.title.romaji} | {anime.title.native}</p>
                     <p>Status: {anime.status}</p>
                 </div>
             </div>
-            <div dangerouslySetInnerHTML={{ __html: anime?.description }}/>
+            <div className="anime-body" dangerouslySetInnerHTML={{ __html: anime?.description }}/>
         </div>
     );
 }

@@ -60,7 +60,7 @@ const Page1 = () => {
 
     const showLoadButton = () => {
         if( animeTitle !== "" && nextPage.page > 1 && nextPage.hasNextPage ){
-            return( <button onClick={() => loadNextPage()}>Load more</button> );
+            return( <button className="load-more-btn" onClick={() => loadNextPage()}>Load more</button> );
         } else {
             return null;
         }
@@ -68,8 +68,8 @@ const Page1 = () => {
 
     return(
         <div className="main">
-            <div className="flex-container">
-                <div className="flex-child">
+            <div className="row1 cols-containers">
+                <div className="col2 left-col">
                     <h1>Anime List</h1>
                     <SearchBar setData={setAnimeTitle}/>
                     <AnimeList animes={animes} clickHandler={clickHandler}/>            

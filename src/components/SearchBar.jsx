@@ -1,12 +1,7 @@
 const SearchBar = ({ setData }) => {
     const onChange = event => setData( event.target.value );
 
-    return( 
-        <div>
-            <p>Search: </p>
-            <input type="text" onChange={onChange}/> 
-        </div>
-    );
+    return( <input className="anime-search" type="text" placeholder="Anime title" onChange={onChange}/> );
 }
 
 export default SearchBar;

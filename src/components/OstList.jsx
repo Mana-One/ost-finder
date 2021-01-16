@@ -38,14 +38,14 @@ const OstList = ({ musicTitle }) => {
     }
 
     return(
-        <>
+        <div className="cols-containers col1">
             { tracks.length === 0 ? 
                 <h3>No tracks found !</h3> : 
                 <ul>
                     {tracks.map( track => <li key={track.key}>Title: {track.title}</li> )}
                 </ul>
             }            
-        </>
+        </div>
     );
 }
 

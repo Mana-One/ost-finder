@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-size: 20px;
 }
 
 html, body {
@@ -28,21 +29,40 @@ h1, h2, h3 {
   text-align: center;
 }
 
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
 input {
-  width: 200px;
-  margin: 0;
-  padding: 0;
+  min-width: 500px;
+  height: 30px;
+}
+
+ul {
+  margin-bottom: 30px;
 }
 
 li {
   margin: 20px 0 0 0;
   list-style: none;
+  cursor: pointer;
 }
 
 button {
   min-width: 150px;
   min-height: 30px;
-  margin-top: 40px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 a {
@@ -86,47 +106,69 @@ a {
 
 .main {
   height: calc(100vh - var(--header-height) - var(--footer-height));
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
 }
 
+.home {
+  background-color: #9dd0d4;
+}
+
 .home > h1:first-child {
   width: 100%;
   height: 40%;
   font-size: 50px;
-  background-color: #9dd0d4;
   padding-top: 20px;
 }
 
-.home-content {
+.row1 {
   flex: 1;
+  width: 100%;
 }
 
-.home-content > .flex-child > p {
-  text-align: center;
-}
-
-.flex-container {
+.cols-containers {
   width: 100%;
   margin: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;  
   flex-direction: row;
 }
 
-.flex-child {
-  width: 50%;
+.row-container {
   height: 100%;
-  padding: 0 20px 0 20px;
-  overflow-y: auto;
-  padding: auto;
-  background-color: #9dd0d4;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.right-flex-child {
+.col1 {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.col2 {
+  width: 50%;
+  height: 100%;
+}
+
+.left-col {
+  background-color: #9dd0d4;
+  overflow-y: auto;
+  padding: 0 20px;
+}
+
+.home-div > p {
+  text-align: center;
+}
+
+/*.right-flex-child {
   width: 50%;
   height: calc(100vh - var(--header-height) - var(--footer-height));
   padding: 0px 20px 0px 20px;
@@ -134,7 +176,7 @@ a {
   align-self: center;
   overflow-y: auto;
   background-color: white;
-}
+}*/
 
 /*.header {
   width: 100%;
@@ -149,29 +191,76 @@ a {
 .loader {
   width: 100%;
   height: 100%;
-  padding: auto;
 }
 
-.anime-header {
+.anime-search {
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.page2 > h1 {
   width: 100%;
+  height: 60px;
+}
+
+.music-search {
+  /*width: 100%;*/
+  height: 60px;
+  margin: auto;
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
-.anime-header-col2 {
-  width: 40%;
-  margin: 0 5%;
+.music-search > input {
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  margin-right: 30px;
 }
 
-.music-container {
-  width: 100%;
-  height: calc(100vh - var(--header-height) - var(--footer-height));
-  padding-left: auto;
-  padding-right: auto;
+.music-search > button {
+  flex: 1;
 }
 
-.music-container > * {
-  padding-left: auto;
-  padding-right: auto;
+.anime-container{
+  overflow-y: auto;
+}
+
+.anime-header {
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.anime-header > img {
+  max-width: 50%;
+  display: block;
+}
+
+.anime-header > div > h3, .anime-header > div > p {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.anime-body {
+  width: 90%;
+  margin:auto;
+  margin-bottom: 30px;
+}
+
+.music-container > div:first-child > * {
+  display: inline-block;
+  margin: auto;
+}
+
+.load-more-btn {
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.anime-list {
+  margin-left: 50px;
 }
